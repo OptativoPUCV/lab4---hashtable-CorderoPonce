@@ -49,16 +49,10 @@ void insertMap(HashMap * map, char * key, void * value) {
   }
   else
   {
-    for (unsigned short i = indice + 1 ; i == map->capacity; i++)
-    {
-      if (map->buckets[i] == NULL)
+    while (map->buckets[indice] != NULL)
       {
-        map->buckets[i]->key = key;
-        map->buckets[i]->value = value;
-        map->size++;
-        break;
+        
       }
-    }
   }
 }
 
