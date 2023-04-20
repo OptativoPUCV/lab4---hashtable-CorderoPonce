@@ -50,7 +50,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   {
     while (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL)
     {
-      indice++;
+      indice = (indice + 1) % map->capacity;
     }
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
