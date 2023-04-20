@@ -9,3 +9,8 @@ hashmap.c:56:17: error: ‘mapa’ is used uninitialized [-Werror=uninitialized]
 cc1: all warnings being treated as errors
 Compilation failed
 1201a56
+Thu 20 Apr 2023 05:21:29 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+f1da755
