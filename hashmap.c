@@ -45,18 +45,17 @@ void insertMap(HashMap * map, char * key, void * value) {
   {
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
-    map->size++;
   }
   else
   {
-    while (map->buckets[indice] != NULL || map->buckets[indice]->key != NULL)
+    while (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL)
     {
       indice++;
     }
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
-    map->size++;
   }
+   map->size++;
 }
 
 void enlarge(HashMap * map) {
