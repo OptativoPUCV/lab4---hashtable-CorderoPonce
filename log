@@ -93,3 +93,35 @@ hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
 cc1: all warnings being treated as errors
 Compilation failed
 dc7d391
+Thu 20 Apr 2023 05:31:56 PM UTC: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   56 |   mapa->buckets = (Pair **) malloc ((sizeof(Pair **)* capacity));
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hashmap.c:58:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   58 |   mapa->capacity = capacity;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hashmap.c:59:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   59 |   mapa->size = 0;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hashmap.c:60:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   60 |   mapa->current = -1;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bcc358f
