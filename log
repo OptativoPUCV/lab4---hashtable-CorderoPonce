@@ -14,3 +14,41 @@ Thu 20 Apr 2023 05:21:29 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 f1da755
+Thu 20 Apr 2023 05:26:14 PM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+test.c: In function ‘createMap’:
+hashmap.c:56:7: error: ‘*mapa.buckets’ is used uninitialized [-Werror=uninitialized]
+   56 |   mapa->buckets[capacity]->key = NULL;
+      |   ~~~~^~~~~~~~~
+hashmap.c:57:7: error: ‘*mapa.buckets’ is used uninitialized [-Werror=uninitialized]
+   57 |   mapa->buckets[capacity]->value = NULL;
+      |   ~~~~^~~~~~~~~
+hashmap.c:56:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   56 |   mapa->buckets[capacity]->key = NULL;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hashmap.c:58:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   58 |   mapa->capacity = capacity;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hashmap.c:59:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   59 |   mapa->size = 0;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hashmap.c:60:7: error: array subscript ‘HashMap {aka struct HashMap}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   60 |   mapa->current = -1;
+      |       ^~
+hashmap.c:55:32: note: referencing an object of size 8 allocated by ‘malloc’
+   55 |   HashMap * mapa = (HashMap *) malloc (sizeof(HashMap *));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ecea935
