@@ -91,14 +91,13 @@ Pair * searchMap(HashMap * map,  char * key) {
   int indice = hash(key, map->capacity);
 
   if (map->buckets[indice] == NULL) return NULL;
-  else if (map->buckets[indice]->key != key){
-    
-    while (map->buckets[indice]->key != key){
+  else if (map->buckets[indice]->key != key) {
+    while (map->buckets[indice] != NULL && map->buckets[indice]->key != key){
       indice = (indice + 1) % map->capacity;
-      if (map->buckets[indice] == NULL) return NULL;
     }
+    if (map->buckets[indice] == NULL) return NULL;
   }
-    return map->buckets[indice];
+  return map->buckets[indice];
 }
 
 Pair * firstMap(HashMap * map) {
