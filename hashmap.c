@@ -43,7 +43,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   unsigned short indice = hash(key, map->capacity);
   if (map->buckets[indice] == NULL) {
-    map->buckets[indice] = malloc(sizeof(HashNode));
+    map->buckets[indice] = malloc(sizeof(Pair *));
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
   }
@@ -55,7 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     while (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL) {
       indice = (indice + 1) % map->capacity;
     }
-    map->buckets[indice] = malloc(sizeof(HashNode));
+    map->buckets[indice] = malloc(sizeof(Pair *));
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
   }
