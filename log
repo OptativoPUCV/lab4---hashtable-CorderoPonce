@@ -249,3 +249,9 @@ Wed 10 May 2023 08:51:38 PM UTC:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 32f31da
+Wed 10 May 2023 08:53:55 PM UTC: 
+ hashmap.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+ tests:  5|4
+total_score: 30/70
+8d2119f
