@@ -87,10 +87,10 @@ void eraseMap(HashMap * map,  char * key) {
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) {
+  int clave = hash(key, map->capacity);
 
-
-    return NULL;
+    return map->buckets[clave];
 }
 
 Pair * firstMap(HashMap * map) {
