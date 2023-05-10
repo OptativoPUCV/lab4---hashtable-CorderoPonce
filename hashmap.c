@@ -46,7 +46,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->buckets[indice] = (Pair *) malloc (sizeof(Pair *));
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
-    return;
   }
   else if (map->buckets[indice]->key == NULL){
     map->buckets[indice]->key = key;
