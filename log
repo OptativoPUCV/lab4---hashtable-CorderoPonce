@@ -365,3 +365,9 @@ Wed 10 May 2023 09:28:18 PM UTC:
  tests:  16|1
 total_score: 60/70
 fa4019c
+Wed 10 May 2023 09:43:12 PM UTC: 
+ hashmap.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+ tests:  17|0
+total_score: 70/70
+bb63598
