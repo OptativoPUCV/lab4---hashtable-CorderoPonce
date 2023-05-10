@@ -82,9 +82,9 @@ HashMap * createMap(long capacity) {
   return mapa;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
+void eraseMap(HashMap * map,  char * key) {  
+  Pair *casilla = searchMap(map, key);
+  casilla->key = NULL;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {
@@ -93,14 +93,13 @@ Pair * searchMap(HashMap * map,  char * key) {
 
   if (map->buckets[indice] == NULL) return NULL;
   else if (strcmp(map->buckets[indice]->key, key) != 0){
-    
     while (strcmp(map->buckets[indice]->key, key) != 0){
       indice = (indice + 1) % map->capacity;
       map->current = indice;
       if (map->buckets[indice] == NULL) return NULL;
     }
   }
-    return map->buckets[indice];
+  return map->buckets[indice];
 }
 
 Pair * firstMap(HashMap * map) {
