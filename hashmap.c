@@ -42,20 +42,18 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
 
   unsigned short indice = hash(key, map->capacity);
-  if (map->buckets[indice] == NULL) {
-    map->buckets[indice] = malloc(sizeof(Pair *));
+  if (map->buckets[indice] == NULL && map->buckets[indice]->key == NULL){
+    map->buckets[indice] = malloc (sizeof(Pair *));
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
   }
-  else if (map->buckets[indice]->key == NULL) {
-    map->buckets[indice]->key = key;
-    map->buckets[indice]->value = value;
-  }
-  else {
-    while (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL) {
+  else
+  {
+    while (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL)
+    {
       indice = (indice + 1) % map->capacity;
     }
-    map->buckets[indice] = malloc(sizeof(Pair *));
+    map->buckets[indice] = malloc (sizeof(Pair *));
     map->buckets[indice]->key = key;
     map->buckets[indice]->value = value;
   }
